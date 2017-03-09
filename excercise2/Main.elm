@@ -74,6 +74,7 @@ myStyle =
 TODO Compete the update of the model by add the previous model state to the
 history in each branch. You can use List.concat for that:
 http://package.elm-lang.org/packages/elm-lang/core/5.1.1/List#concat
+Also use List.take to restrict the history to 10 entries
 --}
 
 
