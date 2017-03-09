@@ -6,6 +6,8 @@
 npm install -g elm-live
 ```
 
+This will install `elm-live`, a tool which compiles elm on the fly and reloads the page.
+
 ## To Do
 ```
 elm live Main.elm -- --debug

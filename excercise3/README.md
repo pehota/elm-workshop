@@ -4,8 +4,9 @@
 ```
 npm install
 ```
-This will install `elm-live` a tool which complies elm on the fly and reloads the
-page.
+
+This will install elm-live a tool which compiles elm on the fly and reloads the page.
+
 ```
 elm package install
 ```
