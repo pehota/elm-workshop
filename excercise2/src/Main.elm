@@ -36,7 +36,14 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Roll ->
-            ( model, Random.generate NewFace (Random.int 1 6) )
+            {--
+TODO Read about the random module here:
+http://package.elm-lang.org/packages/elm-lang/core/latest/Random#generate
+Then generate a commands that generates a random number between 1
+and 6. It should fire the NewFace message afterwards. Replace the
+Cmd.none in the following line.
+--}
+            ( model, Cmd.none )
 
         NewFace newFace ->
             ( Model newFace, Cmd.none )
