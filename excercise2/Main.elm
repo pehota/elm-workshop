@@ -27,8 +27,18 @@ type Msg
     | Decrement
 
 
+
+{--
+TODO Add the history to the inital model (empty list)
+--}
+
+
+model =
+    Model 0
+
+
 main =
-    beginnerProgram { model = 0, view = view, update = update }
+    beginnerProgram { model = model, view = view, update = update }
 
 
 
@@ -45,7 +55,7 @@ view model =
         [ button [ onClick Decrement ] [ text "-" ]
         , div [] [ text (toString model) ]
         , button [ onClick Increment ] [ text "+" ]
-        , div
+        , div []
             [{--TODO
             add history list here.
             Use List.map over the history to create the list items

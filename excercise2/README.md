@@ -3,13 +3,15 @@
 ## Setup
 
 ```
-elm package install elm-lang/html
+npm install -g elm-live
 ```
 
 ## To Do
 ```
-elm reactor
+elm live Main.elm -- --debug
 ```
-Open `Main.elm` in your browser.
+
+Fix the compiler messages and then
+open your browser at `http://localhost:8000`.
 
 Open `Main.elm` in the editor and check the TODO comments in the file.
