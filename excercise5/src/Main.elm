@@ -46,6 +46,7 @@ init =
    Use the imported from JSON.Decode at the top of the file.
    Also check:
    http://package.elm-lang.org/packages/elm-lang/core/latest/Json-Decode
+   The first field is already there.
 -}
 
 
@@ -55,8 +56,6 @@ decodeData =
         (map3
             Customer
             (field "id" string)
-            (field "name" string)
-            (field "purchases" int)
         )
 
 
