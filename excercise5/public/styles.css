@@ -1,0 +1,34 @@
+body {
+  font-family: Arial;
+}
+
+.header {
+  color: gray;
+}
+
+.listItem {
+  background: gray;
+  width: 300px;
+  border: 1px solid black;
+  margin-bottom: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.currentItem {
+  background: yellow;
+}
+
+.currentMerchant {
+  background: blue;
+  color: white;
+  padding: 5px;
+  width: 300px;
+}
+
+.feedback {
+  float: right;
+  background: black;
+  color: white;
+  padding: 5px;
+}

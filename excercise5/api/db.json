@@ -1,0 +1,10 @@
+{
+  "customers": [
+    { "id": "1", "name": "Sally", "purchases": 2 },
+    { "id": "2", "name": "Lance", "purchases": 1 },
+    { "id": "3", "name": "Aki", "purchases": 3 },
+    { "id": "4", "name": "Maria", "purchases": 4 },
+    { "id": "5", "name": "Julian", "purchases": 1 },
+    { "id": "6", "name": "Jaime", "purchases": 1 }
+  ]
+}
