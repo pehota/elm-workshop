@@ -1,33 +1,22 @@
 module Main exposing (..)
 
-import Html exposing (beginnerProgram, div, button, text)
+import Html exposing (Html, beginnerProgram, div, button, text)
 import Html.Events exposing (onClick)
 
 
 type alias Model =
-    Int
-
-
-
-{--
-TODO add two messages, one that doubles the current value
-and one that halves it
---}
+    Float
 
 
 type Msg
     = Increment
     | Decrement
+    | Multiply
+    | Divide
 
 
 main =
     beginnerProgram { model = 0, view = view, update = update }
-
-
-
-{--
-TODO add buttons that fire the messages that you added above.
---}
 
 
 view : Model -> Html Msg
@@ -36,14 +25,9 @@ view model =
         [ button [ onClick Decrement ] [ text "-" ]
         , div [] [ text (toString model) ]
         , button [ onClick Increment ] [ text "+" ]
+        , button [ onClick Multiply ] [ text "*" ]
+        , button [ onClick Divide ] [ text "/" ]
         ]
-
-
-
-{--
-TODO add a type annotation to the update function.
-Also implement the handling for the Double and halve method above
---}
 
 
 update msg model =
@@ -53,3 +37,9 @@ update msg model =
 
         Decrement ->
             model - 1
+
+        Multiply ->
+            model * 2
+
+        Divide ->
+            model / 2
