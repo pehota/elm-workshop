@@ -1,24 +1,13 @@
 module Main exposing (..)
 
-{--TODO expose the ul and li functions of html --}
-
-import Html exposing (beginnerProgram, div, button, text, Html, Attribute)
-
-
-{--TODO expose the style function of the attributes --}
-
-import Html.Attributes
+import Html exposing (beginnerProgram, div, button, text, ul, li, Html, Attribute)
+import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
-
-
-{--
-TODO The Model is now a record type  with a count property(Int). Now add a
-history property(List Int) which saves the previous states.
---}
 
 
 type alias Model =
     { count : Int
+    , history : List Int
     }
 
 
@@ -27,14 +16,8 @@ type Msg
     | Decrement
 
 
-
-{--
-TODO Add the history to the inital model (empty list)
---}
-
-
 model =
-    Model 0
+    Model 0 [ 0 ]
 
 
 main =
@@ -56,12 +39,18 @@ view model =
         , div [] [ text (toString model) ]
         , button [ onClick Increment ] [ text "+" ]
         , div []
-            [{--TODO
+            -- [ ul [ { style = { listStyle = "none", backGround = "gray", fontSize = "small" } } ]
+            [ ul []
+                (List.take
+                    10
+                    (List.map (\entry -> li [] [ text (toString entry) ]) model.history)
+                )
+            ]
+          {--TODO
             add history list here.
             Use List.map over the history to create the list items
             http://package.elm-lang.org/packages/elm-lang/core/5.1.1/List#map
             --}
-            ]
         ]
 
 
@@ -91,7 +80,7 @@ Also use List.take to restrict the history to 10 entries
 update msg model =
     case msg of
         Increment ->
-            { model | count = model.count + 1 }
+            { model | count = model.count + 1, history = model.count :: model.history }
 
         Decrement ->
-            { model | count = model.count - 1 }
+            { model | count = model.count - 1, history = model.count :: model.history }
